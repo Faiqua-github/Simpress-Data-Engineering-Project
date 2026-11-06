@@ -1,8 +1,8 @@
-\# Simpress – End-to-End Data Engineering Project
+# Simpress – End-to-End Data Engineering Project
 
 
 
-\## Project Overview
+## Project Overview
 
 
 
@@ -14,45 +14,45 @@ The project focuses on building a reliable, scalable, and maintainable ELT pipel
 
 
 
-\## Architecture
+## Architecture
 
 
 
-\*\*AWS S3 → Snowpipe → Snowflake RAW → dbt STAGING → dbt MART → Analytics\*\*
+AWS S3 → Snowpipe → Snowflake RAW → dbt STAGING → dbt MART → Analytics\*\*
 
 
 
-\### Technologies Used
+### Technologies Used
 
 
 
-\- \*\*AWS S3:\*\* Cloud storage for source CSV files.
+- \*\*AWS S3:\*\* Cloud storage for source CSV files.
 
-\- \*\*AWS IAM:\*\* Access management and permissions.
+- \*\*AWS IAM:\*\* Access management and permissions.
 
-\- \*\*AWS SQS:\*\* Event notifications for Snowpipe auto-ingestion.
+- \*\*AWS SQS:\*\* Event notifications for Snowpipe auto-ingestion.
 
-\- \*\*AWS SNS:\*\* Notification integration.
+- \*\*AWS SNS:\*\* Notification integration.
 
-\- \*\*Snowflake:\*\* Cloud data warehouse and data processing.
+- \*\*Snowflake:\*\* Cloud data warehouse and data processing.
 
-\- \*\*Snowpipe:\*\* Automated ingestion of files from S3.
+- \*\*Snowpipe:\*\* Automated ingestion of files from S3.
 
-\- \*\*Snowflake Streams and Tasks:\*\* Change tracking and automated processing.
+- \*\*Snowflake Streams and Tasks:\*\* Change tracking and automated processing.
 
-\- \*\*dbt Core:\*\* SQL-based transformations, incremental processing, and data quality testing.
+- \*\*dbt Core:\*\* SQL-based transformations, incremental processing, and data quality testing.
 
-\- \*\*SQL:\*\* Data cleansing, validation, joins, and business logic.
+- \*\*SQL:\*\* Data cleansing, validation, joins, and business logic.
 
-\- \*\*Power BI:\*\* Business intelligence and reporting.
-
-
-
-\## Data Pipeline
+- \*\*Power BI:\*\* Business intelligence and reporting.
 
 
 
-\### 1. Data Ingestion – RAW Layer
+## Data Pipeline
+
+
+
+### 1. Data Ingestion – RAW Layer
 
 
 
@@ -64,15 +64,15 @@ The RAW layer contains:
 
 
 
-\- Carrier
+- Carrier
 
-\- Destination
+- Destination
 
-\- Product
+- Product
 
-\- Status
+- Status
 
-\- Shipment
+- Shipment
 
 
 
@@ -80,7 +80,7 @@ Ingestion metadata is captured, including source filename, file row number, and 
 
 
 
-\### 2. Data Transformation – STAGING Layer
+### 2. Data Transformation – STAGING Layer
 
 
 
@@ -88,25 +88,25 @@ dbt is used to:
 
 
 
-\- Clean and standardize source data.
+- Clean and standardize source data.
 
-\- Handle NULL and invalid values.
+- Handle NULL and invalid values.
 
-\- Perform data type conversions.
+- Perform data type conversions.
 
-\- Remove duplicate records.
+- Remove duplicate records.
 
-\- Implement incremental MERGE processing.
+- Implement incremental MERGE processing.
 
-\- Generate surrogate keys.
+- Generate surrogate keys.
 
-\- Join shipment data with reference data.
+- Join shipment data with reference data.
 
-\- Build a shipment-level silver model.
+- Build a shipment-level silver model.
 
 
 
-\### 3. Analytics – MART Layer
+### 3. Analytics – MART Layer
 
 
 
@@ -118,21 +118,21 @@ It supports analysis of:
 
 
 
-\- Delivery duration.
+- Delivery duration.
 
-\- Delivery performance.
+- Delivery performance.
 
-\- Late and pending shipments.
+- Late and pending shipments.
 
-\- Carrier performance.
+- Carrier performance.
 
-\- Shipment distance.
+- Shipment distance.
 
-\- Product and destination analysis.
+- Product and destination analysis.
 
 
 
-\## dbt Project Structure
+## dbt Project Structure
 
 
 
@@ -176,27 +176,27 @@ simpress/
 
 
 
-\## Running the dbt Project
+## Running the dbt Project
 
 
 
-\### Prerequisites
+### Prerequisites
 
 
 
-\- Python
+- Python
 
-\- dbt Core
+- dbt Core
 
-\- dbt Snowflake adapter
+- dbt Snowflake adapter
 
-\- Snowflake account
+- Snowflake account
 
-\- AWS account
+- AWS account
 
 
 
-\### Setup
+### Setup
 
 
 
@@ -214,7 +214,7 @@ simpress/
 
 
 
-\### Commands
+### Commands
 
 
 
@@ -232,7 +232,7 @@ dbt test
 
 
 
-\## Data Quality and Validation
+## Data Quality and Validation
 
 
 
@@ -244,39 +244,39 @@ Examples include:
 
 
 
-\- Unique key validation.
+- Unique key validation.
 
-\- NOT NULL checks.
+- NOT NULL checks.
 
-\- Referential integrity.
+- Referential integrity.
 
-\- Business rule validation.
+- Business rule validation.
 
-\- Duplicate record handling.
-
-
-
-\## Project Goals
+- Duplicate record handling.
 
 
 
-\- Build an end-to-end cloud-based ELT pipeline.
-
-\- Implement automated file ingestion.
-
-\- Handle incremental data processing.
-
-\- Maintain data quality and consistency.
-
-\- Prepare shipment data for business analytics.
+## Project Goals
 
 
 
-\---
+- Build an end-to-end cloud-based ELT pipeline.
+
+- Implement automated file ingestion.
+
+- Handle incremental data processing.
+
+- Maintain data quality and consistency.
+
+- Prepare shipment data for business analytics.
 
 
 
-\*\*Project:\*\* Simpress Data Engineering Pipeline  
+---
+
+
+
+*\*Project:\*\* Simpress Data Engineering Pipeline  
 
 \*\*Focus:\*\* AWS | Snowflake | dbt | SQL | ELT | Data Quality
 
