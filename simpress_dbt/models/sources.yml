@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: simpress_raw
+    description: "Existing raw tables loaded into Snowflake"
+    database: SIMPRESS_DB
+    schema: RAW
+
+    tables:
+      - name: RAW_CARRIER
+      - name: RAW_DESTINATION
+      - name: RAW_PRODUCT
+      - name: RAW_STATUS
+      - name: RAW_SHIPMENT

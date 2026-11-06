@@ -1,0 +1,27 @@
+# dbt generated files
+target/
+dbt_packages/
+logs/
+
+# Credentials and environment variables
+.env
+.env.*
+!.env.example
+profiles.yml
+
+# Private keys and certificates
+*.pem
+*.p8
+*.key
+
+# Python generated files
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

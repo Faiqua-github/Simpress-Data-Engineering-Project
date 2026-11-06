@@ -1,0 +1,73 @@
+
+version: 2
+
+models:
+  - name: stg_carrier
+    columns:
+      - name: CARRIER_KEY
+        data_tests:
+          - not_null
+          - unique
+
+  - name: stg_destination
+    columns:
+      - name: DESTINATION_KEY
+        data_tests:
+          - not_null
+          - unique
+
+  - name: stg_product
+    columns:
+      - name: PRODUCT_KEY
+        data_tests:
+          - not_null
+          - unique
+
+  - name: stg_status
+    columns:
+      - name: STATUS_KEY
+        data_tests:
+          - not_null
+          - unique
+      - name: CARRIER_KEY
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: source('simpress_raw', 'RAW_CARRIER')
+                field: CARRIER_KEY
+
+  - name: stg_shipment
+    columns:
+      - name: SHIPMENT_ID
+        data_tests:
+          - not_null
+          - unique
+      - name: CARRIER_KEY
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: source('simpress_raw', 'RAW_CARRIER')
+                field: CARRIER_KEY
+      - name: DESTINATION_KEY
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: source('simpress_raw', 'RAW_DESTINATION')
+                field: DESTINATION_KEY
+      - name: PRODUCT_KEY
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: source('simpress_raw', 'RAW_PRODUCT')
+                field: PRODUCT_KEY
+      - name: STATUS_KEY
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: source('simpress_raw', 'RAW_STATUS')
+                field: STATUS_KEY
